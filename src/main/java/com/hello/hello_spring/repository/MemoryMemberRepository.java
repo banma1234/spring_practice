@@ -1,9 +1,12 @@
 package com.hello.hello_spring.repository;
 
 import com.hello.hello_spring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+// 레포지인거 알려줌. 근데 config에서 등록한.
+// @Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();

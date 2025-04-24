@@ -3,13 +3,19 @@ package com.hello.hello_spring.service;
 import com.hello.hello_spring.domain.Member;
 import com.hello.hello_spring.repository.MemberRepository;
 import com.hello.hello_spring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+// 컨테이너 단에서 Autowired 컨트롤러가 MemberService 찾을 수 있게 해줌. 근데 config에서 등록한.
+// @Service
 public class MemberService {
     private final MemberRepository repository;
 
+    // 서비스는 또 레포지가 필요하니까 Autowired 달아서 의존성 주입. 근데 config에서 등록한.
+    // @Autowired
     public MemberService(MemberRepository repository) {
         this.repository = repository;
     }
