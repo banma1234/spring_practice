@@ -5,12 +5,14 @@ import com.hello.hello_spring.repository.MemberRepository;
 import com.hello.hello_spring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 // 컨테이너 단에서 Autowired 컨트롤러가 MemberService 찾을 수 있게 해줌. 근데 config에서 등록한.
 // @Service
+@Transactional
 public class MemberService {
     private final MemberRepository repository;
 
